@@ -8,7 +8,8 @@ format:
     fig-height: 8        
     code-fold: false    
 execute:
-  echo: false           
+  echo: false  
+bibliography: hw6.bib
 ---
 
 
@@ -21,11 +22,8 @@ data <- read.csv(here("data", "star.csv"))
 
 ```
 
-You can add options to executable code like this 
+Here is an in-text citation: @tanner2015. Here is our second citation [@Here].
 
-```{r}
-#| echo: false
-2 * 2
-```
+\newpage
 
-The `echo: false` option disables the printing of code (only output is displayed).
+# References
