@@ -26,4 +26,33 @@ Here is an in-text citation: @tanner2015. Here is our second citation [@Here].
 
 \newpage
 
+## Commit 3
+#### Write the code to create the summary statistics shown in the table below. Output the table below and briefly describe it in text.
+
+```{r}
+library(tidyverse)
+library(rio)
+library(knitr)
+library(kableExtra)
+
+data_table <- data %>%
+  group_by(sex, frl) %>% 
+  summarize(
+    math_mean = round(mean(tmathss, na.rm = TRUE), 2),
+    math_sd = round(sd(tmathss, na.rm = TRUE), 2),
+    rdg_mean = round(mean(treadss, na.rm = TRUE), 2),
+    rdg_sd = round(sd(treadss, na.rm = TRUE),2)) %>% 
+   kable() %>% 
+   kableExtra::row_spec(0, background = "white", bold = TRUE) %>% 
+   kableExtra::row_spec(1:4, background = "white")
+
+
+data_table
+
+```
+
+I created a simple table with white background and bolded headers. The table has 4 rows and 6 columns. I also rounded all of the means and standard deviations to two decimal places, to match the table provided as a guide. By looking at this table we can see that the highest mean reading score is girls without free/reduced lunch, and the highest mean math score is also girls without free/reduced lunch. 
+
+\newpage
+
 # References
