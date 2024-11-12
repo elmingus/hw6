@@ -56,3 +56,24 @@ I created a simple table with white background and bolded headers. The table has
 \newpage
 
 # References
+
+## Commit 4 
+```{r}
+plot1 <- data %>% 
+  ggplot(aes(totexp,tmathss ,color=frl)) + 
+  geom_point(colour = 'gray', size = 1)+ 
+  geom_smooth(method = "lm", se = TRUE) + 
+  labs(title = "Relation between teacher experience and math scores",
+       subtitle = 'Seperate regression lines displayed by free/reduced price lunch status', 
+       x = 'Teacher Experience (years)', y = 'Total Math Scale Score', "Lunch status", color = "Lunch Status") + 
+  theme(legend.position = "bottom", 
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA),  
+    panel.grid.major = element_line(color = "grey90"),
+    panel.grid.minor = element_line(color = "grey90"))+
+  scale_color_discrete(labels = c("Free/Reduced Lunch", "Full Price Lunch"))
+  
+plot1
+
+```
+
